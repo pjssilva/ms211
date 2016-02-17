@@ -1,3 +1,6 @@
+# Ignora aquivos do Jupiter.
+.ipynb_checkpoints
+
 # Ignora arquivos gerados pela compiĺação e que não são úteis.
 *_files
 

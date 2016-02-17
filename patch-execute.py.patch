@@ -1,0 +1,30 @@
+37c37
+<     
+---
+> 
+46,47c46,47
+<             If execution of a cell times out, interrupt the kernel and 
+<             continue executing other cells rather than throwing an error and 
+---
+>             If execution of a cell times out, interrupt the kernel and
+>             continue executing other cells rather than throwing an error and
+64c64
+<     
+---
+> 
+115c115
+<                 
+---
+> 
+117c117
+<                 
+---
+> 
+128c128
+<                 if msg['metadata']['status'] == 'error' and not self.allow_errors:
+---
+>                 if msg['content']['status'] == 'error' and not self.allow_errors:
+135c135
+<         
+---
+> 

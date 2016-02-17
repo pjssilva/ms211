@@ -1,0 +1,5 @@
+# Ignora arquivos gerados pela compiĺação e que não são úteis.
+*_files
+
+# Ignora arquivos Python compilados
+*.pyc

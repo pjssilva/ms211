@@ -1,7 +1,8 @@
 # Makefile simples para gerar os pdfs a partir do cadernos com as notas de aula.
 
 # Pdfs
-PDFS=Introdução.pdf \
+PDFS=Configuração_JuliaBox.pdf \
+	Introdução.pdf \
 	Computação_com_Precisão_Finita.pdf \
 	Sistemas_Lineares.pdf \
 	Equações_Não-Lineares.pdf \
@@ -24,6 +25,9 @@ cleanall : clean
 	-rm -r $(PDFS)
 
 # Regra para gerar os pdfs a partir dos respectivos cadernos
+Configuração_JuliaBox.pdf : Configuracao_JuliaBox.ipynb
+	python converte_para_pdf.py $@
+
 Introdução.pdf : Introducao.ipynb
 	python converte_para_pdf.py $@
 

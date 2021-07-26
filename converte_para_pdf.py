@@ -17,7 +17,7 @@ def remove_acentos(s):
                    if unicodedata.category(c) != 'Mn')
 
 # Pega o nome de arquivo e troca sublinha por espaco.
-nome_base = sys.argv[1].decode("utf-8")[:-4]
+nome_base = sys.argv[1][:-4]
 nome_sem_acentos = remove_acentos(nome_base)
 nome_com_espacos = nome_base.replace('_', ' ')
 
@@ -27,11 +27,11 @@ comando = u"jupyter nbconvert --execute --allow-errors --config custom_cfg.py"
 comando += u" --template notas.tplx --to pdf"
 shutil.copy(nome_sem_acentos + ".ipynb", nome_com_espacos + ".ipynb")
 comando += u' "%s"' % (nome_com_espacos + ".ipynb")
-print comando
+print(comando)
 subprocess.call(comando, shell=True)
 comando = u"jupyter nbconvert --template notas.tplx --to pdf"
 comando += u' "%s"' % (nome_com_espacos + ".ipynb")
-print comando
+print(comando)
 subprocess.call(comando, shell=True)
 
 os.unlink(nome_com_espacos + ".ipynb")

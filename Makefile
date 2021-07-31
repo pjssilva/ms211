@@ -1,17 +1,17 @@
 # Makefile simples para gerar os pdfs a partir do cadernos com as notas de aula.
 
 # Pdfs
-PDFS=Configuração_Julia.pdf \
-	# Introdução.pdf \
-	# Computação_com_Precisão_Finita.pdf \
-	# Sistemas_Lineares.pdf \
-	# Fórmula_de_Taylor_e_Aproximação_de_Derivadas.pdf \
-	# Equações_Não-Lineares.pdf \
-	# Quadrados_Mínimos.pdf \
-	# Interpolação_Polinomial.pdf \
-	# Integração_Numérica.pdf \
-	# Problemas_de_Valor_Inicial.pdf \
-	# Problemas_de_Valor_de_Contorno.pdf
+PDFS=00a_Introducao.pdf \
+	00b_Configuracao_Julia.pdf \
+	01_Computacao_com_Precisao_Finita.pdf \
+	02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf \
+	#03_Equações_Não-Lineares.pdf \
+	#04_Sistemas_Lineares.pdf \
+	#05_Quadrados_Mínimos.pdf \
+	#06_Interpolação_Polinomial.pdf \
+	#07_Integração_Numérica.pdf \
+	#08_Problemas_de_Valor_Inicial.pdf \
+	#09_Problemas_de_Valor_de_Contorno.pdf
 
 # Alvo principal
 all : $(PDFS)
@@ -25,36 +25,40 @@ clean :
 cleanall : clean
 	-rm -r $(PDFS)
 
+NBFLAGS=--TagRemovePreprocessor.remove_cell_tags="remove_cell" \
+    --TemplateExporter.extra_template_basedirs="." \
+	--template notas_template --execute --to pdf
+
 # Regra para gerar os pdfs a partir dos respectivos cadernos
-Configuração_Julia.pdf : Configuracao_Julia.ipynb
-	python converte_para_pdf.py $@
+00a_Introducao.pdf : 00a_Introducao.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
 
-# Introdução.pdf : Introducao.ipynb
+00b_Configuracao_Julia.pdf : 00b_Configuracao_Julia.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
+
+01_Computacao_com_Precisao_Finita.pdf : 01_Computacao_com_Precisao_Finita.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
+
+02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf : 02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
+
+# 03_Equações_Não-Lineares.pdf : 03_Equacoes_Nao-Lineares.ipynb
 # 	python converte_para_pdf.py $@
 
-# Computação_com_Precisão_Finita.pdf : Computacao_com_Precisao_Finita.ipynb
+# 04_Sistemas_Lineares.pdf : 04_Sistemas_Lineares.ipynb
 # 	python converte_para_pdf.py $@
 
-# Sistemas_Lineares.pdf : Sistemas_Lineares.ipynb
+# 05_Quadrados_Mínimos.pdf : 05_Quadrados_Minimos.ipynb
 # 	python converte_para_pdf.py $@
 
-# Fórmula_de_Taylor_e_Aproximação_de_Derivadas.pdf : Formula_de_Taylor_e_Aproximacao_de_Derivadas.ipynb
+# 06_Interpolação_Polinomial.pdf : 06_Interpolacao_Polinomial.ipynb
 # 	python converte_para_pdf.py $@
 
-# Equações_Não-Lineares.pdf : Equacoes_Nao-Lineares.ipynb
+# 07_Integração_Numérica.pdf : 07_Integracao_Numerica.ipynb
 # 	python converte_para_pdf.py $@
 
-# Quadrados_Mínimos.pdf : Quadrados_Minimos.ipynb
+# 08_Problemas_de_Valor_Inicial.pdf : 08_Problemas_de_Valor_Inicial.ipynb
 # 	python converte_para_pdf.py $@
 
-# Interpolação_Polinomial.pdf : Interpolacao_Polinomial.ipynb
-# 	python converte_para_pdf.py $@
-
-# Integração_Numérica.pdf : Integracao_Numerica.ipynb
-# 	python converte_para_pdf.py $@
-
-# Problemas_de_Valor_Inicial.pdf : Problemas_de_Valor_Inicial.ipynb
-# 	python converte_para_pdf.py $@
-
-# Problemas_de_Valor_de_Contorno.pdf: Problemas_de_Valor_de_Contorno.ipynb
+# 09_Problemas_de_Valor_de_Contorno.pdf: 09_Problemas_de_Valor_de_Contorno.ipynb
 # 	python converte_para_pdf.py $@

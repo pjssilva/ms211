@@ -25,7 +25,6 @@ nome_com_espacos = nome_base.replace('_', ' ')
 # Comando para chamar nbconvert e suas opcoes.
 comando = u"jupyter nbconvert --execute --allow-errors --config custom_cfg.py"
 comando += u" --template notas.tplx --to pdf"
-shutil.copy(nome_sem_acentos + ".ipynb", nome_com_espacos + ".ipynb")
 comando += u' "%s"' % (nome_com_espacos + ".ipynb")
 print(comando)
 subprocess.call(comando, shell=True)

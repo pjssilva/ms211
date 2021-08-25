@@ -32,18 +32,23 @@ NBFLAGS=--TagRemovePreprocessor.remove_cell_tags="remove_cell" \
 # Regra para gerar os pdfs a partir dos respectivos cadernos
 00a_Introducao.pdf : 00a_Introducao.ipynb
 	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
 00b_Configuracao_Julia.pdf : 00b_Configuracao_Julia.ipynb
 	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
 01_Computacao_com_Precisao_Finita.pdf : 01_Computacao_com_Precisao_Finita.ipynb
 	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
 02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf : 02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.ipynb
 	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
-# 03_Equações_Não-Lineares.pdf : 03_Equacoes_Nao-Lineares.ipynb
-# 	python converte_para_pdf.py $@
+03_Equações_Não-Lineares.pdf : 03_Equacoes_Nao-Lineares.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
 # 04_Sistemas_Lineares.pdf : 04_Sistemas_Lineares.ipynb
 # 	python converte_para_pdf.py $@

@@ -5,7 +5,7 @@ PDFS=00a_Introducao.pdf \
 	00b_Configuracao_Julia.pdf \
 	01_Computacao_com_Precisao_Finita.pdf \
 	02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf \
-	#03_Equações_Não-Lineares.pdf \
+	03_Equações_Não-Lineares.pdf \
 	#04_Sistemas_Lineares.pdf \
 	#05_Quadrados_Mínimos.pdf \
 	#06_Interpolação_Polinomial.pdf \

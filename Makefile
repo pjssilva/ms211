@@ -6,7 +6,7 @@ PDFS=00a_Introducao.pdf \
 	01_Computacao_com_Precisao_Finita.pdf \
 	02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf \
 	03_Equações_Não-Lineares.pdf \
-	#04_Sistemas_Lineares.pdf \
+	04_Sistemas_Lineares.pdf \
 	#05_Quadrados_Mínimos.pdf \
 	#06_Interpolação_Polinomial.pdf \
 	#07_Integração_Numérica.pdf \
@@ -50,8 +50,9 @@ NBFLAGS=--TagRemovePreprocessor.remove_cell_tags="remove_cell" \
 	jupyter nbconvert $(NBFLAGS) $^
 	jupyter nbconvert --clear-output --inplace $^
 
-# 04_Sistemas_Lineares.pdf : 04_Sistemas_Lineares.ipynb
-# 	python converte_para_pdf.py $@
+04_Sistemas_Lineares.pdf : 04_Sistemas_Lineares.ipynb
+	jupyter nbconvert $(NBFLAGS) $^
+	jupyter nbconvert --clear-output --inplace $^
 
 # 05_Quadrados_Mínimos.pdf : 05_Quadrados_Minimos.ipynb
 # 	python converte_para_pdf.py $@

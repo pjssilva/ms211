@@ -5,11 +5,11 @@ PDFS=00a_Introducao.pdf \
 	00b_Configuracao_Julia.pdf \
 	01_Computacao_com_Precisao_Finita.pdf \
 	02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf \
-	03_Equações_Não-Lineares.pdf \
+	03_Equacoes_Nao-Lineares.pdf \
 	04_Sistemas_Lineares.pdf \
-	#05_Quadrados_Mínimos.pdf \
-	#06_Interpolação_Polinomial.pdf \
-	#07_Integração_Numérica.pdf \
+	#05_Quadrados_Minimos.pdf \
+	#06_Interpolacao_Polinomial.pdf \
+	#07_Integracap_Numerica.pdf \
 	#08_Problemas_de_Valor_Inicial.pdf \
 	#09_Problemas_de_Valor_de_Contorno.pdf
 
@@ -30,41 +30,7 @@ NBFLAGS=--TagRemovePreprocessor.remove_cell_tags="remove_cell" \
 	--template notas_template --execute --to pdf
 
 # Regra para gerar os pdfs a partir dos respectivos cadernos
-00a_Introducao.pdf : 00a_Introducao.ipynb
+%.pdf : %.ipynb
 	jupyter nbconvert $(NBFLAGS) $^
 	jupyter nbconvert --clear-output --inplace $^
-
-00b_Configuracao_Julia.pdf : 00b_Configuracao_Julia.ipynb
-	jupyter nbconvert $(NBFLAGS) $^
-	jupyter nbconvert --clear-output --inplace $^
-
-01_Computacao_com_Precisao_Finita.pdf : 01_Computacao_com_Precisao_Finita.ipynb
-	jupyter nbconvert $(NBFLAGS) $^
-	jupyter nbconvert --clear-output --inplace $^
-
-02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.pdf : 02_Formula_de_Taylor_e_Aproximacao_de_Derivadas.ipynb
-	jupyter nbconvert $(NBFLAGS) $^
-	jupyter nbconvert --clear-output --inplace $^
-
-03_Equações_Não-Lineares.pdf : 03_Equacoes_Nao-Lineares.ipynb
-	jupyter nbconvert $(NBFLAGS) $^
-	jupyter nbconvert --clear-output --inplace $^
-
-04_Sistemas_Lineares.pdf : 04_Sistemas_Lineares.ipynb
-	jupyter nbconvert $(NBFLAGS) $^
-	jupyter nbconvert --clear-output --inplace $^
-
-# 05_Quadrados_Mínimos.pdf : 05_Quadrados_Minimos.ipynb
-# 	python converte_para_pdf.py $@
-
-# 06_Interpolação_Polinomial.pdf : 06_Interpolacao_Polinomial.ipynb
-# 	python converte_para_pdf.py $@
-
-# 07_Integração_Numérica.pdf : 07_Integracao_Numerica.ipynb
-# 	python converte_para_pdf.py $@
-
-# 08_Problemas_de_Valor_Inicial.pdf : 08_Problemas_de_Valor_Inicial.ipynb
-# 	python converte_para_pdf.py $@
-
-# 09_Problemas_de_Valor_de_Contorno.pdf: 09_Problemas_de_Valor_de_Contorno.ipynb
-# 	python converte_para_pdf.py $@
+	touch $@

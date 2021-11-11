@@ -9,8 +9,8 @@ PDFS=00a_Introducao.pdf \
 	04_Sistemas_Lineares.pdf \
 	05_Quadrados_Minimos.pdf \
 	06_Interpolacao_Polinomial.pdf \
+	07_Integracao_Numerica.pdf \
 	08_Problemas_de_Valor_Inicial.pdf \
-	#07_Integracap_Numerica.pdf \
 	#09_Problemas_de_Valor_de_Contorno.pdf
 
 # Alvo principal

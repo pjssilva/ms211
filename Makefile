@@ -11,7 +11,7 @@ PDFS=00a_Introducao.pdf \
 	06_Interpolacao_Polinomial.pdf \
 	07_Integracao_Numerica.pdf \
 	08_Problemas_de_Valor_Inicial.pdf \
-	#09_Problemas_de_Valor_de_Contorno.pdf
+	09_Problemas_de_Valor_de_Contorno.pdf
 
 # Alvo principal
 all : $(PDFS)
